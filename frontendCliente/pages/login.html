@@ -2,24 +2,19 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Login - Avenidão Container</title>
+  <title>Login</title>
   <link rel="stylesheet" href="../assets/css/login.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Font Awesome -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
   <div class="container">
 
-    <!-- TOPO -->
-    <div class="top-icons">
-      <img src="../assets/icons/instagram.png" class="icon">
-    </div>
-
     <!-- LOGO -->
     <div class="logo">
-      <img src="../assets/img/logoavenidao.png" alt="Logo">
+      <img src="../assets/img/logoavenidao.png">
     </div>
 
     <!-- FORM -->
@@ -41,23 +36,20 @@
       <a href="#" class="link">Esqueci minha senha</a>
 
       <div class="divider">OU</div>
+        <button class="btn-register" onclick="irCadastro()">
+        CADASTRE-SE
+</button>
 
-      <button class="btn-secondary">
-        <i class="fa-solid fa-cart-shopping"></i>
-        Comprar sem cadastro
-      </button>
-
-      <button class="btn-register">CADASTRE-SE</button>
-      </div>
-
-      <div class="footer">
-      <img src="../assets/icons/home.png" class="home-icon">
-  
-     </div>
-
+<button class="btn-secondary" onclick="irHome()">
+  Comprar sem cadastro
+</button>
     </div>
+
+    <!-- FOOTER -->
+    <div class="footer"></div>
 
   </div>
 
+ <script src="../assets/js/login.js"></script>
 </body>
 </html>

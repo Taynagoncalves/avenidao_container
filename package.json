@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Taynagoncalves/avenidao_container#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.0"
   }
 }
