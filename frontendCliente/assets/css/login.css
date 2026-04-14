@@ -15,45 +15,43 @@ html, body {
 /* BODY */
 body {
   background: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
 }
 
 /* CONTAINER */
 .container {
   width: 100%;
-  max-width: 420px;
   height: 100vh;
   background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: relative;
 }
 
 /* LOGO */
 .logo {
-  text-align: center;
-  margin-top: 80px;      /* ↓ antes 80px (muito alto) */
-  margin-bottom: -30px;   /* ↓ aproxima do título */
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .logo img {
-  width: 400px;          /* ↓ antes 400px (estourava layout) */
-  max-width: 90%;
+  width: 400px;
 }
 
 /* FORM */
 .login-box {
-  padding: 0 20px;
+  padding: 0 30px;
   text-align: center;
-  margin: 5px 0 10px;         /* ↓ reduz espaço */
+  margin-top: 250px;
 }
 
 /* TITULO */
 .login-box h2 {
   font-size: 20px;
-  margin: 10px 0;        /* ↓ reduz espaço */
+  margin: 10px 0;
 }
 
 /* INPUTS */
@@ -61,14 +59,17 @@ body {
   display: flex;
   align-items: center;
   background: #eeeeee;
-  border-radius: 10px;
-  margin-bottom: 12px;
-  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  padding: 13px 10px;
+  border: 2px solid transparent;
+  transition: 0.2s;
 }
 
 .input-group i {
-  margin-right: 10px;
+  margin-right: 8px;
   color: #777;
+  font-size: 13px;
 }
 
 .input-group input {
@@ -76,9 +77,21 @@ body {
   background: transparent;
   width: 100%;
   outline: none;
+  font-size: 13px;
 }
 
-/* BOTÕES */
+/* 🔥 ESTADOS DOS CAMPOS */
+.input-group.error {
+  border: 2px solid #d32f2f;
+  background: #ffecec;
+}
+
+.input-group.success {
+  border: 2px solid #2e7d32;
+  background: #e8f5e9;
+}
+
+/* BOTÃO ENTRAR */
 .btn-primary {
   width: 70%;
   background: #d32f2f;
@@ -89,26 +102,7 @@ body {
   margin: 15px auto;
   font-weight: bold;
   display: block;
-}
-
-.btn-secondary {
-  width: 100%;
-  background: #eeeeee;
-  border: none;
-  padding: 12px;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-.btn-register {
-  width: 70%;
-  background: #b71c1c;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  border-radius: 10px;
-  margin: 20px auto;
-  display: block;
+  cursor: pointer;
 }
 
 /* LINK */
@@ -125,13 +119,173 @@ body {
   font-size: 13px;
 }
 
-/* FOOTER FIXO EMBAIXO */
+/* BOTÃO COMPRAR */
+.btn-secondary {
+  width: 100%;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #555;
+  cursor: pointer;
+  font-style: italic;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-secondary:hover {
+  background: #ffecec;
+}
+
+.btn-secondary span {
+  display: inline-block;
+  transform: skewX(-10deg);
+}
+
+/* BOTÃO CADASTRO */
+.btn-register {
+  width: 70%;
+  background: #b71c1c;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* FOOTER */
 .footer {
+  margin-top: auto;
   text-align: center;
   padding: 10px;
   border-top: 1px solid #eee;
 }
 
+/* ÍCONES */
 .home-icon {
   width: 28px;
+}
+
+.icon-btn {
+  width: 20px;
+  height: 20px;
+}
+
+/* TERMOS */
+.terms-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  margin: 10px 0;
+  color: #555;
+}
+
+.terms-box input {
+  cursor: pointer;
+}
+
+.terms-box span {
+  color: #d32f2f;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ERRO TERMOS */
+.erro-termos {
+  font-size: 12px;
+  color: #d32f2f;
+  margin-top: 5px;
+  display: none;
+}
+
+/* MENSAGENS DE ERRO */
+.erro-msg {
+  font-size: 11px;
+  margin: 3px 0 8px;
+  display: none;
+  text-align: left;
+}
+
+.erro-msg.erro {
+  color: #d32f2f;
+}
+
+/* Termos de uso */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  width: 95%;
+  max-width: 420px;
+  height: 80vh;
+  margin: 40px auto;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fechar {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* CORPO COM SCROLL */
+.modal-body {
+  padding: 15px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-body h4 {
+  margin-top: 10px;
+}
+
+.modal-body p {
+  font-size: 13px;
+  color: #444;
+}
+
+/* FOOTER FIXO */
+.modal-footer {
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+/* BOTÃO */
+.btn-aceitar {
+  width: 100%;
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
 }

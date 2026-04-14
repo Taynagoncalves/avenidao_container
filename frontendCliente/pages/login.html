@@ -25,24 +25,30 @@
         <i class="fa-solid fa-user"></i>
         <input type="email" placeholder="Seu e-mail">
       </div>
+      <p class="erro-msg">Email Obrigatório</p>
 
       <div class="input-group">
         <i class="fa-solid fa-lock"></i>
         <input type="password" placeholder="Senha">
+        <i class="fa-solid fa-eye" id="toggleSenha"></i>
       </div>
+      <p class="erro-msg">Senha Obrigatória</p>
 
       <button class="btn-primary">ENTRAR</button>
 
       <a href="#" class="link">Esqueci minha senha</a>
 
       <div class="divider">OU</div>
+        <button class="btn-secondary" onclick="irHome()">
+  <img src="../assets/icons/carrinho-de-compras.png" class="icon-btn">
+  <span>Comprar sem Cadastro</span>
+</button>
+       </div>
         <button class="btn-register" onclick="irCadastro()">
         CADASTRE-SE
-</button>
+      </button>
 
-<button class="btn-secondary" onclick="irHome()">
-  Comprar sem cadastro
-</button>
+
     </div>
 
     <!-- FOOTER -->

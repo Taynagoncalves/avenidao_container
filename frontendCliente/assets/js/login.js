@@ -1,14 +1,59 @@
+const inputs = document.querySelectorAll("input");
+const erros = document.querySelectorAll(".erro-msg");
+
+// 👁️ olho senha
+document.querySelectorAll("#toggleSenha").forEach(icon => {
+  icon.addEventListener("click", () => {
+    const input = icon.previousElementSibling;
+
+    if (input.type === "password") {
+      input.type = "text";
+      icon.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+      input.type = "password";
+      icon.classList.replace("fa-eye-slash", "fa-eye");
+    }
+  });
+});
+
+// 🔥 função padrão igual cadastro
+function validarCampo(index, condicao, msgErro) {
+  const input = inputs[index];
+  const grupo = input.closest(".input-group");
+  const erro = erros[index];
+
+  grupo.classList.remove("error", "success");
+
+  if (!condicao) {
+    erro.innerText = msgErro;
+    erro.className = "erro-msg erro"; // 🔥 deixa vermelho
+    erro.style.display = "block";
+    grupo.classList.add("error");
+    return false;
+  } else {
+    erro.style.display = "none";
+    grupo.classList.add("success");
+    return true;
+  }
+}
+
+// 🔥 LOGIN
 document.querySelector(".btn-primary").addEventListener("click", async () => {
 
-  const inputs = document.querySelectorAll("input");
+  let valido = true;
 
-  const email = inputs[0].value;
-  const senha = inputs[1].value;
+  const email = inputs[0];
+  const senha = inputs[1];
 
-  if (!email || !senha) {
-    alert("Preencha todos os campos");
-    return;
+  if (!validarCampo(0, email.value.trim() !== "", "Informe seu email")) {
+    valido = false;
   }
+
+  if (!validarCampo(1, senha.value !== "", "Informe sua senha")) {
+    valido = false;
+  }
+
+  if (!valido) return;
 
   try {
     const resposta = await fetch("http://localhost:8000/login", {
@@ -16,30 +61,31 @@ document.querySelector(".btn-primary").addEventListener("click", async () => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ email, senha })
+      body: JSON.stringify({
+        email: email.value,
+        senha: senha.value
+      })
     });
 
     const data = await resposta.json();
 
     if (resposta.ok) {
-      alert("Login realizado com sucesso");
       window.location.href = "/pages/home.html";
     } else {
-      alert(data.erro);
+      validarCampo(1, false, data.erro); // 🔥 erro no campo senha
     }
 
-  } catch (erro) {
-    alert("Erro ao conectar com o servidor");
+  } catch {
+    console.log("Erro ao conectar");
   }
 
 });
 
-// botão cadastro
-function irCadastro() {
+// navegação
+window.irCadastro = function () {
   window.location.href = "/cadastro";
-}
+};
 
-// comprar sem cadastro
-function irHome() {
+window.irHome = function () {
   window.location.href = "/pages/home.html";
-}
+};

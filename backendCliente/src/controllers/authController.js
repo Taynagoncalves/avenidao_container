@@ -2,18 +2,26 @@ const db = require("../config/db");
 const bcrypt = require("bcrypt");
 
 exports.register = async (req, res) => {
-  const { nome, email, telefone, senha } = req.body;
+  const { nome, email, telefone, senha, termos } = req.body;
 
   if (!nome || !email || !telefone || !senha) {
     return res.status(400).json({ erro: "Preencha todos os campos" });
   }
 
+  // 🔥 validação obrigatória
+  if (!termos) {
+    return res.status(400).json({ erro: "Você precisa aceitar os termos" });
+  }
+
   try {
     const senhaHash = await bcrypt.hash(senha, 10);
 
-    const sql = "INSERT INTO usuarios (nome, email, telefone, senha) VALUES (?, ?, ?, ?)";
+    const sql = `
+      INSERT INTO usuarios (nome, email, telefone, senha, termos_aceitos)
+      VALUES (?, ?, ?, ?, ?)
+    `;
 
-    db.query(sql, [nome, email, telefone, senhaHash], (err, result) => {
+    db.query(sql, [nome, email, telefone, senhaHash, termos], (err, result) => {
       if (err) {
         if (err.code === "ER_DUP_ENTRY") {
           return res.status(400).json({ erro: "Email já cadastrado" });
@@ -21,7 +29,7 @@ exports.register = async (req, res) => {
         return res.status(500).json(err);
       }
 
-      res.json({ mensagem: "Usuário cadastrado com sucesso " });
+      res.json({ mensagem: "Usuário cadastrado com sucesso" });
     });
 
   } catch (error) {

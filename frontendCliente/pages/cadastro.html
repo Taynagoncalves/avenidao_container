@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="../assets/css/login.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font Awesome -->
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -26,43 +25,97 @@
         <i class="fa-solid fa-user"></i>
         <input type="text" placeholder="Seu nome">
       </div>
+      <p class="erro-msg">Nome Obrigatório</p>
 
       <div class="input-group">
         <i class="fa-solid fa-envelope"></i>
         <input type="email" placeholder="Seu email">
       </div>
+      <p class="erro-msg">Email Obrigatório</p>
 
       <div class="input-group">
         <i class="fa-solid fa-phone"></i>
         <input type="text" placeholder="(00) 99999-1111">
       </div>
+      <p class="erro-msg">Telefone Obrigatório</p>
 
       <div class="input-group">
         <i class="fa-solid fa-lock"></i>
         <input type="password" placeholder="Senha">
+        <i class="fa-solid fa-eye toggle-password"></i>
       </div>
+      <p class="erro-msg">Senha Obrigatória</p>
 
       <div class="input-group">
         <i class="fa-solid fa-lock"></i>
         <input type="password" placeholder="Confirmar Senha">
       </div>
+      <p class="erro-msg">Confirmação de senha obrigatória</p>
 
-      <p class="terms">
-        Ao continuar, você concorda com os
-        <span>Termos de Uso</span> e
-        <span>Política de Privacidade</span>.
-      </p>
+      <!-- TERMOS -->
+      <div class="terms-box">
+        <input type="checkbox" id="termos">
+        <label for="termos">
+          Eu concordo com os 
+          <span onclick="abrirTermos()">Termos de Uso</span> e 
+          <span onclick="abrirPrivacidade()">Política de Privacidade</span>
+        </label>
+      </div>
+
+      <p class="erro-termos">Você precisa aceitar os termos</p>
 
       <button class="btn-primary">CADASTRAR</button>
     </div>
 
-    <!-- FOOTER -->
-    <div class="footer">
-      <img src="../assets/icons/home.png" class="home-icon">
-      <span>Voltar</span>
+  </div>
+<div id="modalTermos" class="modal">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h3>Termos de Uso</h3>
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+    </div>
+
+    <div class="modal-body">
+
+      <h4>1. Uso da Plataforma</h4>
+      <p>
+        Ao utilizar o aplicativo, você concorda em fornecer informações verdadeiras
+        e utilizar o sistema apenas para fins legais.
+      </p>
+
+      <h4>2. Cadastro</h4>
+      <p>
+        O usuário é responsável por manter a segurança de sua conta e senha.
+      </p>
+
+      <h4>3. Privacidade</h4>
+      <p>
+        Seus dados serão utilizados apenas para funcionamento da plataforma,
+        respeitando a Lei Geral de Proteção de Dados (LGPD).
+      </p>
+
+      <h4>4. Responsabilidades</h4>
+      <p>
+        Não nos responsabilizamos por uso indevido da conta ou informações fornecidas incorretamente.
+      </p>
+
+      <h4>5. Alterações</h4>
+      <p>
+        Os termos podem ser atualizados a qualquer momento sem aviso prévio.
+      </p>
+
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-aceitar" onclick="aceitarTermos()">
+        Aceitar termos
+      </button>
     </div>
 
   </div>
-<script src="../assets/js/cadastro.js"></script>
+</div>
+
+  <script src="../assets/js/cadastro.js"></script>
 </body>
 </html>
