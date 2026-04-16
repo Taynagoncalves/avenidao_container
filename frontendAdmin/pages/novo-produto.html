@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novo Produto</title>
+  <link rel="stylesheet" href="../assets/css/admin.css">
+<link rel="stylesheet" href="../assets/css/cardapio.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="loja-status">
+        <button id="btnStatusLoja" class="status-loja ligado" type="button">
+          <span class="switch-track">
+            <span class="switch-ball"></span>
+          </span>
+          <span id="textoStatusLoja">LIGADO</span>
+        </button>
+      </div>
+
+      <div class="logo-area">
+        <img src="../assets/img/logoavenida.png" alt="Logo Avenida Container" />
+      </div>
+
+      <nav class="menu">
+        <a href="index.html">
+          <img src="../assets/icons/sino.png" alt="">
+          <span>Ver Pedidos</span>
+        </a>
+
+        <a href="cardapio.html" class="active">
+          <img src="../assets/icons/cardapio.png" alt="">
+          <span>Cardápio</span>
+        </a>
+
+        <a href="categorias.html">
+          <img src="../assets/icons/categoria.png" alt="">
+          <span>Categorias</span>
+        </a>
+
+        <a href="adicionais.html">
+          <img src="../assets/icons/botao-mais.png" alt="">
+          <span>Adicionais</span>
+        </a>
+
+        <a href="area-entrega.html">
+          <img src="../assets/icons/entrega.png" alt="">
+          <span>Área de entrega</span>
+        </a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="titulo-pagina">Novo Produto</div>
+
+      <form id="formProduto" class="form-produto">
+        <div class="form-coluna-esquerda">
+          <div class="campo">
+            <label for="nome">Nome do Produto</label>
+            <input type="text" id="nome" name="nome" />
+          </div>
+
+          <div class="campo">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao"></textarea>
+          </div>
+
+          <div class="campo">
+            <label for="valor">Valor</label>
+            <input type="text" id="valor" name="valor" placeholder="R$" />
+          </div>
+
+          <div class="campo">
+            <label for="categoria">Categoria do Produto</label>
+            <select id="categoria" name="categoria">
+              <option value="">Selecionar a categoria</option>
+            </select>
+          </div>
+
+          <div class="acoes-form">
+            <button type="submit" class="btn-salvar">SALVAR PRODUTO</button>
+            <a href="cardapio.html" class="btn-cancelar">CANCELAR</a>
+          </div>
+        </div>
+
+        <div class="form-coluna-direita">
+          <label for="imagem" class="upload-imagem">
+            <input type="file" id="imagem" name="imagem" accept="image/*" hidden />
+            <div class="icone-camera">📷</div>
+            <span>Clique para adicionar imagem</span>
+          </label>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src="../assets/js/novo-produto.js"></script>
+</body>
+</html>

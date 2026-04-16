@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+  color: #222;
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 180px;
+  background: #f3f3f3;
+  border-right: 1px solid #cfcfcf;
+  display: flex;
+  flex-direction: column;
+}
+
+.loja-status {
+  padding: 14px 14px 8px 14px;
+}
+
+.status-loja {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-loja.ligado {
+  color: #2ca44f;
+}
+
+.status-loja.desligado {
+  color: #d9534f;
+}
+
+.switch-track {
+  width: 24px;
+  height: 14px;
+  border-radius: 999px;
+  background: #59b95f;
+  position: relative;
+  display: inline-block;
+}
+
+.switch-ball {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 2px;
+  left: 12px;
+}
+
+.status-loja.desligado .switch-track {
+  background: #d9534f;
+}
+
+.status-loja.desligado .switch-ball {
+  left: 2px;
+}
+
+.logo-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 8px 18px;
+}
+
+.logo-area img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  border-top: 1px solid #dddddd;
+  position: relative;
+}
+
+.menu a img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.menu a.active {
+  background: #f8f8f8;
+}
+
+.menu a.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #f28c3a;
+}
+
+.content {
+  flex: 1;
+  padding: 26px 32px;
+}
+
+.cards-resumo {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 25px;
+}
+
+.card-resumo {
+  flex: 1;             
+  height: 100px;        
+  background: #f7f7f7;
+  border: 1px solid #d3d3d3;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 20px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.content {
+    padding: 20px 10;
+}
+
+.card-header img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.card-valor {
+  font-size: 25px;
+  color: #222;
+  font-weight: bold;
+}
+
+.bloco-pedidos {
+  margin-left: 12px;
+  margin-right: 10px;
+}
+
+.titulo-bloco {
+  width: 100%;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  background: #f7f7f7;
+  border: 1px solid #d3d3d3;
+  padding: 0 10px;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.lista-pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sem-pedidos {
+  background: #f7f7f7;
+  border: 1px solid #d3d3d3;
+  padding: 16px;
+  font-size: 14px;
+  color: #555;
+  display: none;
+}
+
+.pedido-card {
+  background: #f6f6f6;
+  border: 1px solid #d3d3d3;
+}
+
+.pedido-topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 26px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.status-faixa {
+  min-width: 80px;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.status-novo {
+  background: #f39a1f;
+}
+
+.status-preparo {
+  background: #19a53f;
+}
+
+.status-entrega {
+  background: #88a7c8;
+}
+
+.status-concluido {
+  background: #b8c9dc;
+}
+
+.pedido-id {
+  color: #222;
+}
+
+.pedido-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.pedido-info {
+  min-width: 150px;
+}
+
+.pedido-cliente {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.pedido-tipo {
+  font-size: 12px;
+  color: #ff5a00;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.pedido-data {
+  font-size: 12px;
+  color: #333;
+}
+
+.pedido-pagamento {
+  min-width: 110px;
+  text-align: center;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #c9d7e2;
+  border: 1px solid #9db2c1;
+}
+
+.pedido-valor {
+  min-width: 90px;
+  font-size: 24px;
+  color: #222;
+}
+
+.pedido-acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-acao {
+  min-width: 86px;
+  border: none;
+  border-radius: 7px;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-laranja {
+  background: #f39a56;
+}
+
+.btn-azul {
+  background: #6d97d1;
+}
+
+.btn-imprimir {
+  border: 1px solid #d2aeb0;
+  background: #efd7d8;
+  color: #6a4f50;
+  border-radius: 7px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .cards-resumo {
+    flex-direction: column;
+  }
+
+  .card-resumo {
+    width: 100%;
+    height: auto;
+  }
+
+  .pedido-conteudo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
