@@ -1,0 +1,106 @@
+.titulo-pagina {
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.grid-adicionais {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.box {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.box-titulo {
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.laranja {
+  background: #f4b183;
+}
+
+.verde {
+  background: #c6e0b4;
+}
+
+.box input,
+.box select {
+  width: 100%;
+  height: 35px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.linha {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-laranja {
+  background: #ff6a00;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-verde {
+  background: #1ea54c;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* LISTA */
+.grupo-lista {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.grupo-header {
+  background: #eee;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.item-adicional {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.acoes {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-acao {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.azul { background: #3c78d8; }
+.laranja { background: #ff9900; }
+.vermelho { background: #e06666; }

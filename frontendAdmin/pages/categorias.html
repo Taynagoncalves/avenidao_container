@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Categorias</title>
+
+  <!-- mantém padrão do admin -->
+  <link rel="stylesheet" href="/admin/assets/css/admin.css">
+  <link rel="stylesheet" href="/admin/assets/css/cardapio.css">
+  <link rel="stylesheet" href="/admin/assets/css/categorias.css">
+</head>
+<body>
+
+<div class="admin-layout">
+
+  <!-- 🔒 NÃO mexi no menu lateral (igual ao seu padrão) -->
+  <aside class="sidebar">
+    <aside class="sidebar">
+  <div class="loja-status">
+    <button id="btnStatusLoja" class="status-loja ligado" type="button">
+      <span class="switch-track">
+        <span class="switch-ball"></span>
+      </span>
+      <span id="textoStatusLoja">LIGADO</span>
+    </button>
+  </div>
+
+  <div class="logo-area">
+    <img src="/admin/assets/img/logoavenidao.png" alt="Logo Avenida Container" />
+  </div>
+
+  <nav class="menu">
+    <a href="/admin/index">
+      <img src="/admin/assets/icons/sino.png" alt="">
+      <span>Ver Pedidos</span>
+    </a>
+
+    <a href="/admin/cardapio">
+      <img src="/admin/assets/icons/cardapio.png" alt="">
+      <span>Cardápio</span>
+    </a>
+
+    <a href="/admin/categorias" class="active">
+      <img src="/admin/assets/icons/categoria.png" alt="">
+      <span>Categorias</span>
+    </a>
+
+    <a href="/admin/adicionais">
+      <img src="/admin/assets/icons/botao-mais.png" alt="">
+      <span>Adicionais</span>
+    </a>
+
+    <a href="/admin/area-entrega">
+      <img src="/admin/assets/icons/entrega.png" alt="">
+      <span>Área de entrega</span>
+    </a>
+  </nav>
+</aside>
+  </aside>
+
+  <main class="content">
+
+    <!-- TÍTULO -->
+    <div class="topo-cardapio">
+      <h2>Categorias</h2>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-categoria">
+      <div class="campo">
+        <label>Nome da categoria</label>
+        <input type="text" id="nomeCategoria">
+      </div>
+
+      <div class="campo">
+        <label>Contém adicionais?</label>
+        <select id="temAdicional">
+          <option value="nao">Não</option>
+          <option value="sim">Sim</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label>Adicionais</label>
+        <select id="grupoAdicional">
+          <option>Selecione o grupo</option>
+        </select>
+      </div>
+
+      <button class="btn-criar" id="btnCriar">CRIAR</button>
+    </div>
+
+    <!-- LISTA -->
+    <div class="lista-categorias">
+
+      <div class="header-lista">
+        <span>Nome</span>
+        <span>Contém adicionais</span>
+        <span></span>
+      </div>
+
+      <div id="listaCategorias">
+        <!-- preenchido via JS -->
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="/admin/assets/js/categorias.js"></script>
+</body>
+</html>

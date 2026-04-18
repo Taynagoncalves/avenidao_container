@@ -1,0 +1,99 @@
+.topo-cardapio h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.form-categoria {
+  display: flex;
+  gap: 15px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.campo input,
+.campo select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: 180px;
+}
+
+.btn-criar {
+  background: #1ea54c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.lista-categorias {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.header-lista {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.item-categoria {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px;
+  padding: 10px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.item-categoria:nth-child(even) {
+  background: #f7f7f7;
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-visibilidade {
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-visibilidade.visivel {
+  background: #18a63f;
+}
+
+.btn-visibilidade.oculto {
+  background: #ef9800;
+}
+
+.btn-excluir {
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #ff1d1d;
+  color: white;
+}
+
+.item-categoria.oculta {
+  background: #ecd1d1;
+}

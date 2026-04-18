@@ -14,7 +14,7 @@ form.addEventListener("submit", function (e) {
     alert("Login realizado com sucesso!");
 
     // redireciona para o dashboard
-    window.location.href = "index.html";
+    window.location.href = "/admin/index";
   } else {
     alert("Email ou senha inválidos");
   }

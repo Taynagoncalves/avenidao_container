@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionais</title>
+
+  <link rel="stylesheet" href="/admin/assets/css/admin.css">
+  <link rel="stylesheet" href="/admin/assets/css/adicionais.css">
+</head>
+<body>
+
+<div class="admin-layout">
+    <aside class="sidebar">
+      <div class="loja-status">
+        <button id="btnStatusLoja" class="status-loja ligado" type="button">
+          <span class="switch-track">
+            <span class="switch-ball"></span>
+          </span>
+          <span id="textoStatusLoja">LIGADO</span>
+        </button>
+      </div>
+
+      <div class="logo-area">
+        <img src="/admin/assets/img/logoavenidao.png" alt="Logo Avenida Container" />
+      </div>
+
+      <nav class="menu">
+        <a href="/admin/index" class="active">
+          <img src="/admin/assets/icons/sino.png" alt="">
+          <span>Ver Pedidos</span>
+        </a>
+
+        <a href="/admin/cardapio">
+          <img src="/admin/assets/icons/cardapio.png" alt="">
+          <span>Cardápio</span>
+        </a>
+
+        <a href="/admin/categorias">
+          <img src="/admin/assets/icons/categoria.png" alt="">
+          <span>Categorias</span>
+        </a>
+
+        <a href="/admin/adicionais">
+          <img src="/admin/assets/icons/botao-mais.png" alt="">
+          <span>Adicionais</span>
+        </a>
+
+        <a href="/admin/area-entrega">
+          <img src="/admin/assets/icons/entrega.png" alt="">
+          <span>Área de entrega</span>
+        </a>
+      </nav>
+    </aside>
+
+
+  <main class="content">
+
+    <div class="titulo-pagina">Adicionais</div>
+
+    <!-- FORMULÁRIOS -->
+    <div class="grid-adicionais">
+
+      <!-- CRIAR GRUPO -->
+      <div class="box grupo">
+        <div class="box-titulo laranja">Criar Grupo de Adicionais</div>
+
+        <label>Nome do Grupo</label>
+        <input type="text" id="nomeGrupo">
+
+        <button class="btn-laranja" id="btnCriarGrupo">Criar Grupo</button>
+      </div>
+
+      <!-- CRIAR ADICIONAL -->
+      <div class="box adicional">
+        <div class="box-titulo verde">Criar Adicional</div>
+
+        <div class="linha">
+          <div>
+            <label>Nome do Adicional</label>
+            <input type="text" id="nomeAdicional">
+          </div>
+
+          <div>
+            <label>Valor</label>
+            <input type="number" id="valorAdicional">
+          </div>
+
+          <div>
+            <label>Grupo</label>
+            <select id="selectGrupo">
+              <option>Selecione</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn-verde" id="btnCriarAdicional">
+          Criar Adicional
+        </button>
+      </div>
+
+    </div>
+
+    <!-- LISTA -->
+    <div id="listaGrupos"></div>
+
+  </main>
+</div>
+
+<script src="/admin/assets/js/adicionais.js"></script>
+</body>
+</html>
